@@ -1,12 +1,12 @@
 if [ -z $UPSTREAM_REPO ]
 then
   echo "Cloning main Repository"
-  git clone https://github.com/JNSBOT/JNS_FC_BOT.git /JNS_FC_BOT
+  git clone https://github.com/DKBOTx/TovinoBotV3.git /TovinoBotV3
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /JNS_FC_BOT
+  git clone $UPSTREAM_REPO /TovinoBotV3
 fi
-cd /vellachilaano
+cd /TovinoBotV3
 pip3 install -U -r requirements.txt
-echo "Starting JNS BOTS...."
+echo "Starting 𝘋𝘒_𝘉𝘖𝘛𝘹...."
 python3 bot.py
