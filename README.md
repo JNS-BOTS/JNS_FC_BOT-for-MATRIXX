@@ -51,13 +51,14 @@
 * Check `info.py` in this code for more variables
 
 
-## Deploy
-You can deploy this bot anywhere.
+### Deploy on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)</br>
-
-
-[![Deploy](https://dashboard.heroku.com/new-app?template=https://github.com/JNS-BOTS-V2/JNS_FC_BOT)
+<p align="left">
+  <a href="https://heroku.com/deploy?template=https://github.com/JNS-BOTS-V2/JNS_FC_BOT">
+     <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
+  </a>
+</p>
+ 
 <details><summary>Deploy To VPS</summary>
 <p>
 <pre>
