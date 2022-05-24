@@ -56,6 +56,8 @@ You can deploy this bot anywhere.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)</br>
 
+
+[![Deploy](https://dashboard.heroku.com/new-app?template=https://github.com/JNS-BOTS-V2/JNS_FC_BOT)
 <details><summary>Deploy To VPS</summary>
 <p>
 <pre>
