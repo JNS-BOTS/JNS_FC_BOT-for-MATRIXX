@@ -24,41 +24,22 @@ BATCH_FILES = {}
 async def start(client, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ],
-        [
-        InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help')
-        ],
-        [
-        InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
-        ]]
-       
-        reply_markup = InlineKeyboardMarkup(buttons)
-        if not START_IMAGE_URL:
-            await message.reply(
-                script.STARTgrp_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
+        await message.reply_sticker(
+            'CAACAgUAAxkBAAEBHLhilcHI9LGFiorY11Cb41HiOT8XxgACbAYAAr4GsFT_LGNUHw4NliQE',
+            reply_markup=InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],
+                [
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help')
+                ],
+                [
+                    InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
+                    InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
+                ]]
             )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.STARTgrp_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+        )
+
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
@@ -72,35 +53,26 @@ async def start(client, message: pyrogram.types.Message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     
     if len(message.command) != 2:
-
-        buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ],
-        [
-        InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
-        ],
-        [
-        InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
-        ],
-        [
-        InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
-        ]]
-
-        reply_markup = InlineKeyboardMarkup(buttons)
-
-        await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(
-                (message.from_user.mention if 
-                message.from_user else 
-                message.chat.title), 
-                temp.U_NAME, 
-                temp.B_NAME,
-            ),
-            reply_markup=reply_markup
+        await message.reply_sticker(
+            'CAACAgUAAxkBAAEBHMBilcThzzHGlWeuR13DzZQzC1mWGwAC1wUAAjN-sFS0apxINCirGyQE',
+            reply_markup=InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],
+                [
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
+                ],
+                [
+                    InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+                ],
+                [
+                    InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
+                    InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
+                ]]
+            )
         )
+        
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -131,28 +103,27 @@ async def start(client, message: pyrogram.types.Message):
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
 
-        buttons = [[
-        InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ],
-        [
-        InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
-        ],
-        [
-        InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
-        ],
-        [
-        InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
-        ]]
-        
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
+        await message.reply_sticker(
+            'CAACAgUAAxkBAAEBHHxilS6668h0GOSlzlxjkoAVoYuqOAACJAEAAsiUZBRCczVc173iYyQE',
+            reply_markup=InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],
+                [
+                    InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
+                ],
+                [
+                    InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+                ],
+                [
+                    InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
+                    InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
+                ]]
+            )
         )
+        await query.answer('ʟᴏᴀᴅɪɴɢ......')
+        
         return
     data = message.command[1]
     try:
