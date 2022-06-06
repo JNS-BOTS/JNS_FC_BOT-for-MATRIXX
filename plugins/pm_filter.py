@@ -585,7 +585,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('🎈ᴋɪɴɢ🎈', url=f'http://t.me/vloggerdeven_TG'),
+                        InlineKeyboardButton('🎈ᴋɪɴɢ🎈', callback_data='dev_all1'),
                         InlineKeyboardButton('📯sᴜᴘᴘᴏʀᴛ📯', url=f'https://t.me/jns_fc_bots')
                     ],
                     [
@@ -594,7 +594,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 ]
             )
-        )     
+        )   
+    elif query.data == "dev_all1":
+        await query.message.delete()
+        await query.message.reply_sticker(
+            'CAACAgUAAxkBAAEBH0hinPbKkK2Q1dNeMLOBxzDTaxk7XAAC5AIAAgX8WFYr5CVXDF0kuCQE',
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton('❤️‍🔥JNS❤️‍🔥', url=f'http://t.me/JINTONS')
+                    ],
+                    [
+                        InlineKeyboardButton('🤠DK🤠', url=f'https://t.me/aboutme_DK'),
+                        InlineKeyboardButton('🤠EVA MARIA🤠', url=f'https://t.me/TeamEvamaria')
+                    ],
+                    [
+                        InlineKeyboardButton('🎀ʙᴀᴄᴋ', callback_data='about_menu1'),
+                        InlineKeyboardButton('ᴄʟᴏsᴇ💤', callback_data='close')
+                    ]
+                ]
+            )
+        ) 
+        
+        
     elif query.data == "jns_maintains":
         await query.message.delete()
         await query.message.reply_sticker(
@@ -1120,6 +1142,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     
     await asyncio.sleep(DELETE_TIME)
     await fmsg.delete()
+    await msg.delete()
 
     if spoll:
         await msg.message.delete()
@@ -1134,7 +1157,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("𝖨 𝖼𝖺𝗇𝗍 𝖿𝗂𝗇𝖽 𝗂𝗍 𝗂𝗇 𝗆𝗒 𝖣𝖺𝗍𝖺𝖡𝖺𝗌𝖾.")
+        k = await msg.reply("I couldn't find any movie in that name.")
         await asyncio.sleep(8)
         await k.delete()
         return
@@ -1163,15 +1186,30 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗌𝖾𝗇𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾. 𝖨𝖿 𝖸𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖥𝗈𝗋 𝖢𝖺𝗆 𝗉𝗋𝗂𝗇𝗍 𝖸𝗈𝗎 𝗐𝗂𝗅𝗅 𝗇𝗈𝗍 𝖦𝖾𝗍 𝗂𝗍.")
+        k = await msg.reply(" I couldn't find anything related to that. Check your spelling")
         await asyncio.sleep(8)
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
-    btn = [InlineKeyboardButton(text="🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
-    await msg.reply("𝖡𝗋𝗈, 𝖢𝗁𝖾𝖼𝗄 𝗍𝗁𝖾 𝗌𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝗈𝖿 𝗆𝗈𝗏𝗂𝖾/𝗌𝖾𝗋𝗂𝖾𝗌 𝗇𝖺𝗆𝖾 𝗒𝗈𝗎 𝗁𝖺𝗏𝖾 𝗋𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝗂𝗇 𝗀𝗈𝗈𝗀𝗅𝖾.",
+    btn = [[
+        InlineKeyboardButton(
+            text=movie.strip(),
+            callback_data=f"spolling#{user}#{k}",
+        )
+    ] for k, movie in enumerate(movielist)]
+    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    zz = await msg.reply('I couldnt find anything related to that, just a sec looking for IMDB suggestions  🧐')
+    await asyncio.sleep(3)
+    zz1 = await zz.edit("Did you mean any one of these?  🤓",
                     reply_markup=InlineKeyboardMarkup(btn))
-
+    await asyncio.sleep(10)
+    zz2 = await zz1.edit('check Whether it is released or not in OTT 👺')
+    
+    await asyncio.sleep(2)
+    await zz2.delete()
+    await msg.delete()
+    
+    
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
