@@ -73,7 +73,7 @@
             "required": false
         },
         "UPSTREAM_REPO":{
-            "description": "just upstream repo",
+            "description": "DONTTTT CHANGE THIS",
             "value": "https://github.com/JNSBOT/JNS_FC_BOT",
             "required": false
         },        
