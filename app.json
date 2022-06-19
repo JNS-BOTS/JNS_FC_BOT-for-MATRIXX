@@ -72,6 +72,11 @@
             "value": "300",
             "required": false
         },
+        "UPSTREAM_REPO":{
+            "description": "just upstream repo",
+            "value": "https://github.com/JNSBOT/JNS_FC_BOT",
+            "required": false
+        },        
         "START_IMAGE_URL":{
             "description": "Start image URL. Defaults to https://telegra.ph/file/85f36a9eb6c73c31bcded.jpg",
             "value": "https://telegra.ph/file/85f36a9eb6c73c31bcded.jpg",
