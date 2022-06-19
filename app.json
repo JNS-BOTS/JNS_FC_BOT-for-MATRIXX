@@ -78,8 +78,8 @@
             "required": false
         },        
         "START_IMAGE_URL":{
-            "description": "Start image URL. Defaults to https://telegra.ph/file/85f36a9eb6c73c31bcded.jpg",
-            "value": "https://telegra.ph/file/85f36a9eb6c73c31bcded.jpg",
+            "description": "Start image URL. Defaults to https://telegra.ph/file/ba82cac4dd4e79261c3b4.jpg",
+            "value": "https://telegra.ph/file/ba82cac4dd4e79261c3b4.jpg",
             "required": false
         },
         "UNAUTHORIZED_CALLBACK_TEXT":{
