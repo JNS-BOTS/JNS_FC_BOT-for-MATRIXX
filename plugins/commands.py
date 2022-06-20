@@ -64,7 +64,7 @@ async def start(client, message: pyrogram.types.Message):
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
                 ],
                 [
-                    InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+                    InlineKeyboardButton('🔥CT FAMILY🔥', url=f'http://t.me/cinema_tharavadu')
                 ],
                 [
                     InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
@@ -114,7 +114,7 @@ async def start(client, message: pyrogram.types.Message):
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
                 ],
                 [
-                    InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+                    InlineKeyboardButton('🔥CT FAMILY🔥', url=f'http://t.me/cinema_tharavadu')
                 ],
                 [
                     InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
