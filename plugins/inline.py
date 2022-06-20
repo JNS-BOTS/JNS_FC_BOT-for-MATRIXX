@@ -106,7 +106,7 @@ def get_reply_markup(query):
             InlineKeyboardButton('➕ ᴀᴅᴅ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ],
         [
-            InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+            InlineKeyboardButton('🔥CT FAMILY🔥', url=f'http://t.me/cinema_tharavadu')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
