@@ -435,7 +435,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
             msg1 = await query.message.reply(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
-                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : [ @JNS_BOTS ]<code> {title}</code>\n\n'              
+                f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : [ @cinema_tharavadu ]<code> {title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 True,
                 'html',
@@ -510,7 +510,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
                 ],[
-                    InlineKeyboardButton('❤️‍🔥ＪƝ⟆ ᗷ〇Ƭ⟆❤️‍🔥', url=f'http://t.me/JNS_BOTS')
+                    InlineKeyboardButton('🔥Cinema Tharavadu🔥', url=f'http://t.me/cinema_tharavadu')
                 ],[
                     InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
                     InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
@@ -567,10 +567,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('⚙️ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ ⚙️', callback_data='jns_maintains')
                 ],
                 [
-                    InlineKeyboardButton('❤️‍🔥ᴊɴs ʙᴏᴛs❤️‍🔥', url=f'https://t.me/jns_bots'),
-                    InlineKeyboardButton('💾ᴊɴs ᴍᴏᴠɪᴇs💾', url=f'https://t.me/jns_movies')
-                ],
-                [
                     InlineKeyboardButton('🎀ʙᴀᴄᴋ🎀', callback_data='start')
                 ]
                 ]
@@ -605,7 +601,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton('❤️‍🔥JNS❤️‍🔥', url=f'http://t.me/JINTONS')
                     ],
                     [
-                        InlineKeyboardButton('🤠DK🤠', url=f'https://t.me/aboutme_DK'),
                         InlineKeyboardButton('🤠EVA MARIA🤠', url=f'https://t.me/TeamEvamaria')
                     ],
                     [
@@ -629,9 +624,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [
                         InlineKeyboardButton('👨🏻‍🦯ᴅᴇᴠ ɴᴏᴏʙ👨🏻‍🦯', url=f'http://t.me/jintons'),
                         InlineKeyboardButton('📯sᴜᴘᴘᴏʀᴛ📯', url=f'https://t.me/jns_fc_bots')
-                    ],
-                    [
-                        InlineKeyboardButton('🤖ᴍʏ ʙʀᴏᴛʜᴇʀs🤖', callback_data='bros')
                     ],
                     [
                         InlineKeyboardButton('🎀ʙᴀᴄᴋ', callback_data='about_menu1'),
@@ -1202,10 +1194,10 @@ async def advantage_spell_chok(msg):
     await asyncio.sleep(3)
     zz1 = await zz.edit("Did you mean any one of these?  🤓",
                     reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(10)
+    await asyncio.sleep(15)
     zz2 = await zz1.edit('check Whether it is released or not in OTT 👺')
     
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await zz2.delete()
     await msg.delete()
     
